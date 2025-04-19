@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-Eduction</title>
+    <link rel="icon" href="./image/piyushicon.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .education-section {
+            min-height: 100vh;
+            background: #0f172a;
+            padding: 4rem 2rem;
+            color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #64ffda;
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #64ffda;
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            width: 100%;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .timeline-item:nth-child(odd) {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(even) {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 30px);
+            padding: 2rem;
+            background: rgba(100, 255, 218, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            border-color: #64ffda;
+        }
+
+        .timeline-date {
+            color: #64ffda;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            color: #ccd6f6;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-desc {
+            color: #8892b0;
+            line-height: 1.6;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #64ffda;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(100, 255, 218, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+        }
+
+        .nav-buttons {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2rem;
+            z-index: 10;
+        }
+
+        .nav-arrow {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #64ffda;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #64ffda;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-arrow:hover {
+            background: #64ffda;
+            color: #0f172a;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="education-section">
+        <div class="education-container">
+            <h2 class="section-title">Education Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024-2025</div>
+                        <h3 class="timeline-title">Bachelor of Commerce</h3>
+                        <p class="timeline-desc">Pradhan Mantri Colleges of Excellence<br>Devi Ahilya Vishwavidyalaya, Indore<br></p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - 2023</div>
+                        <h3 class="timeline-title">Higher Secondary Education</h3>
+                        <p class="timeline-desc">Commerce<br></p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3 class="timeline-title">Secondary Education</h3>
+                        <p class="timeline-desc">Shree uma vidhya mandir School<br></p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <div class="nav-arrow" onclick="window.location.href='about.html'">←</div>
+            <div class="nav-arrow" onclick="window.location.href='projects.html'">→</div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>

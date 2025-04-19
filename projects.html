@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-Projects</title>
+    <link rel="icon" href="./image/piyushicon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+            background-image: 
+                linear-gradient(120deg, rgba(59, 130, 246, 0.1), transparent),
+                radial-gradient(circle at 90% 10%, rgba(100, 255, 218, 0.15), transparent 60%);
+                background: #0f172a;
+        }
+
+        .projects-section {
+            min-height: 100vh;
+           
+           
+            /* padding: 4rem 2rem; */
+            color: #e2e8f0;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #64ffda;
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #64ffda;
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            border: 2px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .project-title {
+            color: #64ffda;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-desc {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.5rem 1rem;
+            border: 1px solid #64ffda;
+            border-radius: 5px;
+            color: #64ffda;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #64ffda;
+            color: #0f172a;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Replace the existing nav-buttons styles with these */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            /* margin-top: 4rem; */
+            margin-bottom: 2rem;
+            /* background-color: #0f172a; */
+
+        }
+
+        .nav-arrow {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #64ffda;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #64ffda;
+            font-size: 1.8rem;
+            transition: all 0.4s ease;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-arrow::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+border:  none;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+            z-index: 0;
+            color: #0f172a;
+        }
+
+        .nav-arrow:hover::before {
+            transform: scale(1);
+        }
+
+        .nav-arrow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .nav-arrow span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-arrow:hover span {
+            color: #0f172a;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="projects-section">
+        <div class="projects-container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="./image/Ai.png" alt="Library Management" class="project-image">
+                    <h3 class="project-title">Introduction to Generative AI Studio</h3>
+                    <!-- <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Swing</span>
+                    </div> -->
+                    <p class="project-desc">
+                        I successfully completed the "Introduction to Generative AI Studio" course, where I explored the fundamentals of generative AI, including how tools like text-to-image and large language models operate. This certification reflects my commitment to staying at the forefront of emerging technology and creative AI solutions.
+                    </p>
+                    <!-- <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="./image/graphi.jpeg" alt="Student Portal" class="project-image">
+                    <h3 class="project-title">Graphic Desginer</h3>
+                    <!-- <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div> -->
+                    <p class="project-desc">
+                        A dream written down becomes a goal — and this is mine."
+Toyota Fortuner: Where luxury meets power.
+ Burning roads, blazing goals — one ride closer to the dream.
+ Chasing sunsets with horsepower and heart.
+  Not just a car — it's a statement.
+                    </p>
+                    <!-- <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div> -->
+                </div>
+
+                <!-- <div class="project-card">
+                    <video controls>
+                        <source src="" type="video/mp4" class="project-image">
+                      
+                      </video>
+                    <h3 class="project-title">Inventory Management</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">Tkinter</span>
+                    </div>
+                    <p class="project-desc">
+                        Desktop application for managing inventory with features for stock tracking, sales management, and reporting.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        
+       
+    </section>
+    <div class="nav-buttons">
+        <div class="nav-arrow" onclick="window.location.href='education.html'">←</div>
+        <div class="nav-arrow" onclick="window.location.href='contact.html'">→</div>
+    </div>
+    <!-- <footer class="footer">
+        <p>© 2024 Portfolio. All rights reserved | Designed with  by Durgesh </p>
+    </footer> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                img.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                    alert('😎 😎 na bacha na tuj se na ho pai ga');
+                });
+                
+                img.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', '😎 Happy Downloading! - From Abhishek\'s Portfolio');
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('copy', function(e) {
+            // Prevent the default copy behavior
+            e.preventDefault();
+            
+            // Get the selected text
+            const selectedText = window.getSelection().toString();
+            
+            // Create the modified text with emoji
+            const modifiedText = '😎' + '\n\n😂 Nice try 😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂 😂';
+            
+            // Set the modified text to clipboard
+            e.clipboardData.setData('text/plain', modifiedText);
+        });
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>

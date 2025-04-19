@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-contact</title>
+    <link rel="icon" href="./image/piyushicon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .contact-section {
+            min-height: 100vh;
+            background: #0f172a;
+            padding: 4rem 2rem;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: 
+                linear-gradient(45deg, rgba(59, 130, 246, 0.1), transparent),
+                radial-gradient(circle at 10% 90%, rgba(100, 255, 218, 0.15), transparent 60%);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            color: #64ffda;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .contact-text {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-family: 'Inter', sans-serif;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64ffda;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .social-link:nth-child(1) { animation-delay: 0.3s; }
+        .social-link:nth-child(2) { animation-delay: 0.4s; }
+        .social-link:nth-child(3) { animation-delay: 0.5s; }
+        .social-link:nth-child(4) { animation-delay: 0.6s; }
+        .social-link:nth-child(5) { animation-delay: 0.7s; }
+
+        .social-link:hover {
+            transform: translateY(-10px);
+            background: #64ffda;
+            color: #0f172a;
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: #64ffda;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            /* position: absolute; */
+            bottom: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            .social-links
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-text">
+                Let's connect! Feel free to reach out through any of these platforms.
+                I'm always excited to collaborate on new projects and meet fellow creators.
+            </p>
+            <div class="social-links">
+                <a href="https://instagram.com/piyush.__patidar203" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                    <a href="https://www.facebook.com/profile.php?id=61575163031184" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                   
+                    <a href="https://linkedin.com/in/piyush-patidar-806200318" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a> 
+                <a href="https://wa.me/6260485284" class="social-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>patidarpiyush344@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 6260485284</span>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <footer class="footer">
+        <p>© 2024 Portfolio. All rights reserved | Designed with by Durgesh Patidar</p>
+    </footer>
+   <script src="./script.js"></script>
+</body>
+</html>

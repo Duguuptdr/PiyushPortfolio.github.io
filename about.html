@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-About</title>
+    <link rel="icon" href="./image/piyushicon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .about-section {
+            min-height: 100vh;
+            background: #0f172a;
+            background-image: 
+                radial-gradient(at 20% 30%, #3b82f680 0, transparent 50%),
+                radial-gradient(at 80% 70%, #64ffda80 0, transparent 50%);
+            padding: 4rem 2rem;
+            color: #e2e8f0;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #64ffda;
+            filter: grayscale(20%);
+            transition: all 0.4s ease;
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #64ffda;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-content h2::before {
+            content: '<';
+            color: #64ffda;
+            opacity: 0.7;
+        }
+
+        .about-content h2::after {
+            content: '/>';
+            color: #64ffda;
+            opacity: 0.7;
+        }
+
+        .about-text {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(100, 255, 218, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            color: #64ffda;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-5px);
+            border-color: #64ffda;
+        }
+
+        .nav-buttons {
+            position: relative;
+            bottom: 1rem;
+            left: 80%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2rem;
+            z-index: 10;
+            margin-top: 100px;
+        }
+
+        .nav-arrow {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #64ffda;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #64ffda;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-arrow:hover {
+            background: #64ffda;
+            color: #0f172a;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 968px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+
+            }
+
+           
+        }
+    </style>
+</head>
+<body>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="./image/image2.jpg" alt="About Me">
+                <div class="image-border"></div>
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p class="about-text">
+                    I craft compelling stories through seamless edits — blending visuals, sound, and rhythm to leave a lasting impression.
+                </p>
+                <p class="about-text">
+                    My journey into video editing began with a curiosity for how visuals tell stories — frame by frame. What started as simple edits has grown into a passionate career where I craft powerful, engaging videos that move audiences and bring ideas to life.
+                </p>
+                <div class="skills-grid">
+                    <div class="skill-item">Premiere Pro</div>
+                    <div class="skill-item">Illustrator</div>
+                    <div class="skill-item">Photoshop</div>
+                    <div class="skill-item"> AfterEffects</div>
+                    <div class="skill-item"> AI skills</div>
+                    <div class="skill-item"> Adobe</div>
+                     </div>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <div class="nav-arrow" onclick="window.location.href='index2.html'">←</div>
+            <div class="nav-arrow">→</div>
+        </div>
+    </section>
+    <script>
+        document.querySelector('.nav-arrow:last-child').addEventListener('click', function() {
+            window.location.href = 'education.html';
+        });
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+<!-- Add these links in the head section -->

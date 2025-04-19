@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piyush-Portfolio</title>
+    <link rel="icon" href="./image/piyushicon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Segoe UI', sans-serif; */
+        }
+
+        .nav-flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-section {
+            min-height: 100vh;
+            background: #0a192f;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .right-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .greeting {
+            font-family: 'JetBrains Mono', monospace;
+            color: #64ffda;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4.5rem;
+            color: #ccd6f6;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .role {
+            font-size: 2.5rem;
+            color: #8892b0;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            color: #8892b0;
+            font-size: 1.1rem;
+            max-width: 540px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .skills {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .primary-btn {
+            background: #64ffda;
+            color: #0a192f;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            border: 1px solid #64ffda;
+            color: #64ffda;
+        }
+
+        .profile-container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        .profile-bg {
+            width: 100%;
+            height: 100%;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        .profile-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+            object-fit: cover;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+        }
+
+        @media (max-width: 968px) {
+            .home-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .right-content {
+                order: -1;
+            }
+
+            .profile-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .name {
+                font-size: 3rem;
+            }
+
+            .role {
+                font-size: 2rem;
+            }
+
+            .skills {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .action-buttons {
+                justify-content: center;
+            }     
+        }
+
+        .nav-container {
+            position: relative;
+            /* bottom: 3rem; */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 3rem;
+            z-index: 10;
+        }
+
+        .nav-arrow {
+            width: 55px;
+            height: 55px;
+            border: 2px solid #64ffda;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .nav-arrow::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #64ffda;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        body {
+    background: #0a192f;
+}
+        .nav-arrow i {
+            color: #64ffda;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(100, 255, 218, 0.3);
+        }
+
+        .nav-arrow:hover::before {
+            transform: scale(1);
+        }
+
+        .nav-arrow:hover i {
+            color: #0a192f;
+        }
+
+        .left-arrow {
+            animation: floatLeft 2s ease-in-out infinite;
+        }
+
+        .right-arrow {
+            animation: floatRight 2s ease-in-out infinite;
+        }
+
+        @keyframes floatLeft {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-10px); }
+        }
+
+        @keyframes floatRight {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+
+        .nav-container{
+            left: 20%;
+        }
+        .home-section{
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Add this right after opening body tag, before home-section -->
+    <div class="welcome-popup">
+        <div class="popup-content">
+            <h2>Welcome to My Portfolio</h2>
+        </div>
+    </div>
+    
+    <!-- Add this to your existing style section -->
+    <style>
+        .welcome-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 1s ease-out forwards;
+            animation-delay: 2s;
+        }
+    
+        .popup-content {
+            text-align: center;
+            animation: scaleIn 0.5s ease-out;
+        }
+    
+        .popup-content h2 {
+            color: #64ffda;
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+            animation: glow 2s ease-in-out infinite;
+        }
+    
+        @keyframes fadeOut {
+            from { opacity: 1; visibility: visible; }
+            to { opacity: 0; visibility: hidden; }
+        }
+    
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(100, 255, 218, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(100, 255, 218, 0.6); }
+        }
+    </style>
+    <section class="home-section">
+        <div class="left-content">
+            <p class="greeting">Hi there! I'm</p>
+            <h1 class="name">Piyush Patidar</h1>
+            <h2 class="role">Graphic Designer & Video Editor</h2>
+            <p class="description">
+                Creative and detail-oriented Graphic Designer & Video Editor with 2+ years of experience crafting engaging visuals, brand identities, and compelling video content. Proficient in Adobe Creative Suite, Final Cut Pro, and motion graphics. Adept at transforming concepts into high-quality designs that align with brand messaging and resonate with target audiences.
+            </p>
+            <div class="skills">
+                <span class="skill-tag">Premiere Pro</span>
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">Illustrator</span>
+                <span class="skill-tag">Adobe</span>
+            </div>
+            <!-- Update the button in the action-buttons div -->
+            <div class="action-buttons">
+                <button class="btn primary-btn" onclick="window.location.href='projects.html'" >View Projects</button>
+                <button class="btn secondary-btn" onclick="window.location.href='contact.html'">Get in Touch</button>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="profile-container">
+                <div class="profile-bg"></div>
+                <img src="./image/images.jpeg" alt="Profile" class="profile-img">
+            </div>
+        </div>
+    </section>
+    <div class="nav-flex">
+    <div class="nav-container">
+        <div class="nav-arrow left-arrow">
+            <i>←</i>
+        </div>
+        <div class="nav-arrow right-arrow">
+            <i>→</i>
+        </div>
+    </div></div>
+    <script>
+        document.querySelector('.right-arrow').addEventListener('click', function() {
+            window.location.href = 'about.html';
+        });
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>
